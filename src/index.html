@@ -1,12 +1,85 @@
-<div>Na sniadanie jemytest</div>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  
+  <div>Na sniadanie jemytest</div>
 <div class="grid-container">
-    <div class="test1"></div>
-    <div class="test2"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-
-    <div class="grid-menucalc format-menucalc">teste</div>
+  <div class="test1"></div>
+  <div class="test2"></div>
+  <div class="test1"></div>
+  <div class="test1"></div>
+  <div class="test1"></div>
+  <div class="test1"></div>
+  <div class="test1"></div>
+  <div class="mdc-touch-target-wrapper">
+    <button class="mdc-button mdc-button--touch">
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">My Accessible Button</span>
+      <span class="mdc-button__touch"></span>
+    </button>
+  </div>
+  <div class="grid-menucalc format-menucalc">
+    <button class="mdc-button mdc-button--raised" onclick="myFunction()">
+      <span class="mdc-button__label">Contained Button</span>
+    </button>
+    <script>
+        function myFunction() {
+          alert(" am an alert box!");
+        }
+      </script>
+  </div>
+  
 </div>
+<div class="grid-tabselector format-tabselector">
+    <div class="mdc-tab-bar" role="tablist">
+        <div class="mdc-tab-scroller">
+          <div class="mdc-tab-scroller__scroll-area">
+            <div class="mdc-tab-scroller__scroll-content">
+              <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                <span class="mdc-tab__content">
+                  <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
+                  <span class="mdc-tab__text-label">AAA</span>
+                </span>
+                <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                </span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+              <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                <span class="mdc-tab__content">
+                  <span class="mdc-tab__icon material-icons" aria-hidden="true">dangerous</span>
+                  <span class="mdc-tab__text-label">BBB</span>
+                </span>
+                <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                </span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  </div>
+
+  <button class="mdc-button">
+    <span class="mdc-button__ripple"></span>
+    <i class="material-icons mdc-button__icon" aria-hidden="true"
+      >bookmark</i
+    >
+    <span class="mdc-button__label">Text Button plus icon</span>
+  </button>
+  
+  <button class="mdc-button mdc-button--outlined">
+    <span class="mdc-button__ripple"></span>
+    <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+    <span class="mdc-button__label">Outlined Button plus Icon</span>
+  </button>
+
+  <button class="mdc-button mdc-button--raised">
+  <span class="mdc-button__ripple"></span>
+  <i class="material-icons mdc-button__icon" aria-hidden="true"
+    >bookmark</i
+  >
+  <span class="mdc-button__label">Contained Button plus Icon</span>
+</button>

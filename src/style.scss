@@ -1,3 +1,13 @@
+
+@use "@material/tab-bar/mdc-tab-bar";
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/tab/mdc-tab";
+@use "@material/button";
+@use "@material/button/styles";
+
+
+
 $yellow-green: #b0eb00;
 $red: #b30015;
 $blue: #2a00b3;
