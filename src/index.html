@@ -83,59 +83,135 @@
             role="tabpanel"
             aria-labelledby="v-pills-bmi-tab"
           >
-            <input
-              type="Podaj wiek"
-              name="bmiWiek"
-              id="bmiWiek"
-              placeholder="wiek"
-            />
-            <input
-              type="Podaj Wzrost"
-              name="bmiWzrost"
-              id="bmiWzrost"
-              placeholder="wzrost w cm"
-            />
-            <h2>Co to jest wskaźnik BMI?</h2>
-            BMI - Body Mass Index, czyli indeks masy ciała to iloraz masy ciała
-            wyrażonej w kilogramach i wzrostu wyrażonego w metrach podniesionego
-            do kwadratu. Nazywany jest inaczej wskaźnikiem Queteleta od nazwiska
-            jego twórcy - belgijskiego statystyka Adolfa Queteleta. Przelicznik
-            BMI został opracowany w 1832 roku, a do powszechnego użytku wszedł w
-            latach 70. XX wieku. Stosowany jest zarówno przez mężczyzn, jak i
-            przez kobiety. Służy do określenia prawidłowej masy ciała i zyskał
-            największe znaczenie w ocenie zagrożenia chorobami
-            dietozależnymi.Wykazano, że współczynnik BMI w dużym stopniu
-            koreluje z zawartością tłuszczu w organizmie. Dlatego kalkulator BMI
-            w sposób pośredni i orientacyjny określa zawartość tkanki
-            tłuszczowej w organizmie na podstawie proporcji wagi do wzrostu.
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span
+                  class="justify-content-end input-group-text"
+                  id="bmiWagaOpis"
+                  >Podaj Wage w kg</span
+                >
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                name="bmiWaga"
+                id="bmiWaga"
+                placeholder="waga w kg"
+                aria-describedby="bmiWagaOpis"
+                min="1"
+              />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span
+                  class="justify-content-end input-group-text"
+                  id="bmiWzrostOpis"
+                  >Podaj Wzrost w cm</span
+                >
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                name="bmiWzrost"
+                id="bmiWzrost"
+                placeholder="wzrost w cm"
+                aria-describedby="bmiWzrostOpis"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="przeliczBMI()"
+            >
+              Przelicz BMI
+            </button>
+            <div class="text-center"><strong> Twój BMI to:</strong></div>
+            <div
+              class="text-center border rounded"
+              id="wynikBmi"
+              style="background-color: yellow"
+            >
+              <h3>WYNIK</h3>
+            </div>
+            <div class="text-right">
+              <p></p>
 
-          <div
-            class="modal fade"
-            id="infoBmr"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="infoBmrTytul"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="infoBmrTytul">
-                    Informacja o BMI
-                  </h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Zamknij"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-toggle="modal"
+                data-target="#infoBmi"
+              >
+                Informacja o BMI
+              </button>
+            </div>
+            <div class="mx-auto">
+              <li>niedowaga: poniżej 18,5</li>
+              <li>prawidłowa masa ciała: 18,5-24,9</li>
+              <li>nadwaga: 25,0-29,9</li>
+              <li>otyłość I stopnia: 30,0-34,9</li>
+              <li>otyłość II stopnia: 35,0-39,9</li>
+              <li>otyłość III stopnia: powyżej 40</li>
+            </div>
+            <div
+              class="modal fade"
+              id="infoBmi"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="infoBmiTytul"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="infoBmiTytul">
+                      Informacja o BMI
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Zamknij"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h2>Co to jest wskaźnik BMI?</h2>
+                    BMI - Body Mass Index, czyli indeks masy ciała to iloraz
+                    masy ciała wyrażonej w kilogramach i wzrostu wyrażonego w
+                    metrach podniesionego do kwadratu. Nazywany jest inaczej
+                    wskaźnikiem Queteleta od nazwiska jego twórcy - belgijskiego
+                    statystyka Adolfa Queteleta. Przelicznik BMI został
+                    opracowany w 1832 roku, a do powszechnego użytku wszedł w
+                    latach 70. XX wieku. Stosowany jest zarówno przez mężczyzn,
+                    jak i przez kobiety. Służy do określenia prawidłowej masy
+                    ciała i zyskał największe znaczenie w ocenie zagrożenia
+                    chorobami dietozależnymi.Wykazano, że współczynnik BMI w
+                    dużym stopniu koreluje z zawartością tłuszczu w organizmie.
+                    Dlatego kalkulator BMI w sposób pośredni i orientacyjny
+                    określa zawartość tkanki tłuszczowej w organizmie na
+                    podstawie proporcji wagi do wzrostu.
 
-            <h2>Jaka jest prawidłowa waga? Normy BMI</h2>
-            Licznik BMI podaje wynik według podstawowej kwalifikacji dla
-            dorosłych mężczyzn i kobiet:
-                    <div class="">
+                    <h2>Jak obliczyć BMI?</h2>
+                    W jaki sposób obliczyć indeks BMI? Wzór lub kalkulator BMI -
+                    to dwa narzędzia, które mogą posłużyć nam do obliczenia
+                    wskaźnika BMI. Wystarczy znać swoją aktualną masę ciała i
+                    wzrost. Oczywiście obliczanie BMI za pomocą kalkulatora
+                    online jest wygodniejsze niż korzystanie z matematycznego
+                    wzoru. Dla sceptyków, którzy chcą porównać wynik otrzymany w
+                    kalkulatorze, podajemy wzór służący do obliczenia stosunku
+                    wagi do wzrostu: BMI = masa ciała [kg] / wzrost [m2] Wynik,
+                    jaki otrzymasz, powinien być identyczny z wynikiem
+                    otrzymanym w naszym kalkulatorze BMI. Będzie on mieścił się
+                    w jednym z sześciu zakresów. Dzięki kontrolowaniu wielkości
+                    BMI możesz uniknąć ryzyka otyłości oraz związanych z nią
+                    chorób.
+
+                    <h2>Jaka jest prawidłowa waga? Normy BMI</h2>
+                    Licznik BMI podaje wynik według podstawowej kwalifikacji dla
+                    dorosłych mężczyzn i kobiet:
+                    <div class="mx-2">
                       <li>niedowaga: poniżej 18,5</li>
                       <li>prawidłowa masa ciała: 18,5-24,9</li>
                       <li>nadwaga: 25,0-29,9</li>
@@ -143,22 +219,37 @@
                       <li>otyłość II stopnia: 35,0-39,9</li>
                       <li>otyłość III stopnia: powyżej 40</li>
                     </div>
-            Im wyższy stopień otyłości, tym większe ryzyko wystąpienia groźnych
-            chorób, takich jak: miażdżyca, choroba niedokrwienna serca, udar
-            mózgu, a nawet niektóre nowotwory. Kalkulator BMI nie jest
-            wskaźnikiem precyzyjnym. Dla dokładniejszego określenia stanu
-            odżywienia organizmu warto skorzystać też z innych wskaźników, które
-            uwzględniają wiek, płeć i aktywność fizyczną. Należy też pamiętać o
-            tym, że na masę ciała mają również wpływ choroby przewlekłe. W
-            przypadku osób chorych samo obliczenie wskaźnika BMI nie jest
-            wystarczające, konieczna jest również konsultacja z lekarzem i
-            wykonanie odpowiednich badań. W przypadku niektórych osób pomiar BMI
-            może być obarczony pewnym błędem. Osoby aktywne fizycznie,
-            uprawiające sport, posiadające dużą masę mięśniową, mogą mieć wynik
-            BMI wskazujący na nadwagę, a w rzeczywistości mieć prawidłową masę
-            ciała. Ponadto kalkulator BMI nie jest przeznaczony dla dzieci do
-            około 14 roku życia i dla kobiet w ciąży - dla osób z tych grup
-            opracowano specjalne wskaźniki do obliczania wagi.
+                    Im wyższy stopień otyłości, tym większe ryzyko wystąpienia
+                    groźnych chorób, takich jak: miażdżyca, choroba
+                    niedokrwienna serca, udar mózgu, a nawet niektóre nowotwory.
+                    Kalkulator BMI nie jest wskaźnikiem precyzyjnym. Dla
+                    dokładniejszego określenia stanu odżywienia organizmu warto
+                    skorzystać też z innych wskaźników, które uwzględniają wiek,
+                    płeć i aktywność fizyczną. Należy też pamiętać o tym, że na
+                    masę ciała mają również wpływ choroby przewlekłe. W
+                    przypadku osób chorych samo obliczenie wskaźnika BMI nie
+                    jest wystarczające, konieczna jest również konsultacja z
+                    lekarzem i wykonanie odpowiednich badań. W przypadku
+                    niektórych osób pomiar BMI może być obarczony pewnym błędem.
+                    Osoby aktywne fizycznie, uprawiające sport, posiadające dużą
+                    masę mięśniową, mogą mieć wynik BMI wskazujący na nadwagę, a
+                    w rzeczywistości mieć prawidłową masę ciała. Ponadto
+                    kalkulator BMI nie jest przeznaczony dla dzieci do około 14
+                    roku życia i dla kobiet w ciąży - dla osób z tych grup
+                    opracowano specjalne wskaźniki do obliczania wagi.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Zamknij
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
             class="tab-pane fade"
@@ -166,7 +257,80 @@
             role="tabpanel"
             aria-labelledby="v-pills-kalorii-tab"
           >
-            Wskaznik ilosci potrzebnych kalorii
+            <input type="number" name="wiek" id="bmrWiek" />
+            <input type="number" name="waga" id="bmrWaga" />
+            <input type="number" name="wzrost" id="bmrwzrost" />
+
+            <button
+              type="button"
+              W
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#infoBmr"
+            >
+              Informacja o BMR
+            </button>
+
+            <div
+              class="modal fade"
+              id="infoBmr"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="infoBmrTytul"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="infoBmrTytul">
+                      Informacja o BMR
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Zamknij"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h2>Co to jest zapotrzebowanie kaloryczne?</h2>
+                    Zapotrzebowanie kaloryczne organizmu to nic innego, jak
+                    nasze całkowite wydatki energetyczne w ciągu doby, na które
+                    składają się: ● podstawowa przemiana materii (PPM, BMR) -
+                    dzienna ilość kalorii potrzebna do podtrzymania podstawowych
+                    funkcji życiowych, ● termogeneza, ● aktywność fizyczna. Jak
+                    najprościej obliczyć zapotrzebowanie kaloryczne? Wypełnić
+                    puste pola w naszym kalkulatorze kalorii i kliknąć przycisk
+                    „oblicz”! Zanim jednak tego dokonasz, dowiedz się więcej na
+                    temat sposobów obliczania kalorii. Poznaj teoretyczne
+                    podstawy naszego kalkulatora żywieniowego!
+                    <h2>Wskaźnik BMR BMR</h2>
+                    (ang. Basal Metabolic Rate) - metabolizm podstawowy,
+                    określany inaczej podstawową przemianą materii (PPM) to
+                    najniższy poziom przemian energetycznych, warunkujący
+                    dostarczenie energii niezbędnej do zachowania podstawowych
+                    funkcji życiowych w optymalnych warunkach bytowych.
+                    Kalkulator BMR określa dzienne zapotrzebowanie kaloryczne
+                    dla osoby w spoczynku, po 12-godzinnej przerwie od
+                    ostatniego posiłku i aktywności fizycznej, w warunkach
+                    komfortu psychicznego i cieplnego (w temperaturze około
+                    24℃). Dla zdrowej osoby dorosłej wskaźnik BMR wynosi około 1
+                    kcal/kg m.c./godz., czyli około 24 kcal/kg m.c./dobę.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Zamknij
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
             class="tab-pane fade"
