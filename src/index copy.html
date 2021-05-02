@@ -1,0 +1,159 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+</head>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+  crossorigin="anonymous"
+/>
+<script src="../../src/test.js"></script>
+<body>
+  <div>Na sniadanie jemytest</div>
+  <div class="grid-container">
+    <div class="test1"></div>
+    <div class="test2"></div>
+    <div class="test1"></div>
+    <div class="test1"></div>
+    <div class="test1"></div>
+    <div class="test1"></div>
+    <div class="test1"></div>
+    <div class="mdc-touch-target-wrapper">
+      <button class="mdc-button mdc-button--touch">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">My Accessible Button</span>
+        <span class="mdc-button__touch"></span>
+      </button>
+    </div>
+    <div class="grid-menucalc format-menucalc">
+      <button class="mdc-button mdc-button--raised" onclick="myFunction()">
+        <span class="mdc-button__label">Contained Button</span>
+      </button>
+      <script>
+        function myFunction() {
+          alert(' am an alert box!');
+        }
+      </script>
+    </div>
+  </div>
+  <div class="grid-tabselector format-tabselector">
+    <div class="mdc-tab-bar" role="tablist">
+      <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area">
+          <div class="mdc-tab-scroller__scroll-content">
+            <button
+              class="mdc-tab mdc-tab--active"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true"
+                  >favorite</span
+                >
+                <span class="mdc-tab__text-label">AAA</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span
+                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                ></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button
+              class="mdc-tab mdc-tab--active"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true"
+                  >dangerous</span
+                >
+                <span class="mdc-tab__text-label">BBB</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span
+                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                ></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="mdc-button">
+    <span class="mdc-button__ripple"></span>
+    <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+    <span class="mdc-button__label">Text Button plus icon</span>
+  </button>
+
+  <button class="mdc-button mdc-button--outlined">
+    <span class="mdc-button__ripple"></span>
+    <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+    <span class="mdc-button__label">Outlined Button plus Icon</span>
+  </button>
+
+  <button class="mdc-button mdc-button--raised">
+    <span class="mdc-button__ripple"></span>
+    <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+    <span class="mdc-button__label">Contained Button plus Icon</span>
+  </button>
+  <div class="container">
+    <div class="row">
+      <div class="col-2 btn btn-danger text-left">test</div>
+      <div class="col-6 btn btn-light">tttttttttttttttttttttttttt</div>
+      <div class="col-4">test</div>
+    </div>
+  </div>
+  <p>
+<div>TEST</div>
+<div id="block2" style="display:none">Block 1</div>
+
+
+<div id="block1" style="display:none">Blockj 2</div>
+
+<button onclick="wyswietlDivaz()">WYSWIETL</button>
+  </p>
+
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+      <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+      <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <input type="Podaj Lape" placeholder="LAPA">
+
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <input type="WAGA" placeholder="WAGA">
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+  </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+  integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+  crossorigin="anonymous"
+></script>
+
+

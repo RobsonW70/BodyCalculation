@@ -1,1 +1,7 @@
-console.log(/[a-z]+007/.test("abc007"));
+function wyswietlDivaz() {
+  if (document.getElementById('block1').style.display == 'none') {
+    document.getElementById('block1').style.display = 'block';
+  } else {
+    document.getElementById('block1').style.display = 'none';
+  }
+}

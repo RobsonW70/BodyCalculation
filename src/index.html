@@ -10,105 +10,172 @@
   integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
   crossorigin="anonymous"
 />
+<script src="../../src/test.js"></script>
 <body>
-  <div>Na sniadanie jemytest</div>
-  <div class="grid-container">
-    <div class="test1"></div>
-    <div class="test2"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-    <div class="test1"></div>
-    <div class="mdc-touch-target-wrapper">
-      <button class="mdc-button mdc-button--touch">
-        <span class="mdc-button__ripple"></span>
-        <span class="mdc-button__label">My Accessible Button</span>
-        <span class="mdc-button__touch"></span>
-      </button>
-    </div>
-    <div class="grid-menucalc format-menucalc">
-      <button class="mdc-button mdc-button--raised" onclick="myFunction()">
-        <span class="mdc-button__label">Contained Button</span>
-      </button>
-      <script>
-        function myFunction() {
-          alert(' am an alert box!');
-        }
-      </script>
-    </div>
-  </div>
-  <div class="grid-tabselector format-tabselector">
-    <div class="mdc-tab-bar" role="tablist">
-      <div class="mdc-tab-scroller">
-        <div class="mdc-tab-scroller__scroll-area">
-          <div class="mdc-tab-scroller__scroll-content">
-            <button
-              class="mdc-tab mdc-tab--active"
-              role="tab"
-              aria-selected="true"
-              tabindex="0"
-            >
-              <span class="mdc-tab__content">
-                <span class="mdc-tab__icon material-icons" aria-hidden="true"
-                  >favorite</span
-                >
-                <span class="mdc-tab__text-label">AAA</span>
-              </span>
-              <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                <span
-                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
-                ></span>
-              </span>
-              <span class="mdc-tab__ripple"></span>
-            </button>
-            <button
-              class="mdc-tab mdc-tab--active"
-              role="tab"
-              aria-selected="true"
-              tabindex="0"
-            >
-              <span class="mdc-tab__content">
-                <span class="mdc-tab__icon material-icons" aria-hidden="true"
-                  >dangerous</span
-                >
-                <span class="mdc-tab__text-label">BBB</span>
-              </span>
-              <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                <span
-                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
-                ></span>
-              </span>
-              <span class="mdc-tab__ripple"></span>
-            </button>
-          </div>
-        </div>
+  <div id="header">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6 text-center text-wrap">
+        <h3>
+          Aplikacja w celu przeliczania i sprawdzania wartosci fizjologicznych
+          organizmu
+        </h3>
       </div>
     </div>
   </div>
-
-  <button class="mdc-button">
-    <span class="mdc-button__ripple"></span>
-    <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
-    <span class="mdc-button__label">Text Button plus icon</span>
-  </button>
-
-  <button class="mdc-button mdc-button--outlined">
-    <span class="mdc-button__ripple"></span>
-    <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
-    <span class="mdc-button__label">Outlined Button plus Icon</span>
-  </button>
-
-  <button class="mdc-button mdc-button--raised">
-    <span class="mdc-button__ripple"></span>
-    <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
-    <span class="mdc-button__label">Contained Button plus Icon</span>
-  </button>
+  <p></p>
   <div class="container">
     <div class="row">
-      <div class="col-2 btn btn-danger text-left">test</div>
-      <div class="col-6 btn btn-light">tttttttttttttttttttttttttt</div>
-      <div class="col-4">test</div>
+      <div class="col-md-2">
+        <div
+          class="nav flex-column nav-pills"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <a
+            class="nav-link active"
+            id="v-pills-bmi-tab"
+            data-toggle="pill"
+            href="#v-pills-bmi"
+            role="tab"
+            aria-controls="v-pills-bmi"
+            aria-selected="true"
+            >Kalkulator BMI</a
+          >
+          <a
+            class="nav-link"
+            id="v-pills-kalorii-tab"
+            data-toggle="pill"
+            href="#v-pills-kalorii"
+            role="tab"
+            aria-controls="v-pills-kalorii"
+            aria-selected="false"
+            >Kalkulator Kalorii</a
+          >
+          <a
+            class="nav-link"
+            id="v-pills-wody-tab"
+            data-toggle="pill"
+            href="#v-pills-wody"
+            role="tab"
+            aria-controls="v-pills-wody"
+            aria-selected="false"
+            >Kalkulator Wody</a
+          >
+          <a
+            class="nav-link"
+            id="v-pills-whr-tab"
+            data-toggle="pill"
+            href="#v-pills-whr"
+            role="tab"
+            aria-controls="v-pills-whr"
+            aria-selected="false"
+            >Kalkulator WHR</a
+          >
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-bmi"
+            role="tabpanel"
+            aria-labelledby="v-pills-bmi-tab"
+          >
+            <input
+              type="Podaj wiek"
+              name="bmiWiek"
+              id="bmiWiek"
+              placeholder="wiek"
+            />
+            <input
+              type="Podaj Wzrost"
+              name="bmiWzrost"
+              id="bmiWzrost"
+              placeholder="wzrost w cm"
+            />
+            <h2>Co to jest wskaźnik BMI?</h2>
+            BMI - Body Mass Index, czyli indeks masy ciała to iloraz masy ciała
+            wyrażonej w kilogramach i wzrostu wyrażonego w metrach podniesionego
+            do kwadratu. Nazywany jest inaczej wskaźnikiem Queteleta od nazwiska
+            jego twórcy - belgijskiego statystyka Adolfa Queteleta. Przelicznik
+            BMI został opracowany w 1832 roku, a do powszechnego użytku wszedł w
+            latach 70. XX wieku. Stosowany jest zarówno przez mężczyzn, jak i
+            przez kobiety. Służy do określenia prawidłowej masy ciała i zyskał
+            największe znaczenie w ocenie zagrożenia chorobami
+            dietozależnymi.Wykazano, że współczynnik BMI w dużym stopniu
+            koreluje z zawartością tłuszczu w organizmie. Dlatego kalkulator BMI
+            w sposób pośredni i orientacyjny określa zawartość tkanki
+            tłuszczowej w organizmie na podstawie proporcji wagi do wzrostu.
+
+            <h2>Jak obliczyć BMI?</h2>
+            W jaki sposób obliczyć indeks BMI? Wzór lub kalkulator BMI - to dwa
+            narzędzia, które mogą posłużyć nam do obliczenia wskaźnika BMI.
+            Wystarczy znać swoją aktualną masę ciała i wzrost. Oczywiście
+            obliczanie BMI za pomocą kalkulatora online jest wygodniejsze niż
+            korzystanie z matematycznego wzoru. Dla sceptyków, którzy chcą
+            porównać wynik otrzymany w kalkulatorze, podajemy wzór służący do
+            obliczenia stosunku wagi do wzrostu: BMI = masa ciała [kg] / wzrost
+            [m2] Wynik, jaki otrzymasz, powinien być identyczny z wynikiem
+            otrzymanym w naszym kalkulatorze BMI. Będzie on mieścił się w jednym
+            z sześciu zakresów. Dzięki kontrolowaniu wielkości BMI możesz
+            uniknąć ryzyka otyłości oraz związanych z nią chorób.
+
+            <h2>Jaka jest prawidłowa waga? Normy BMI</h2>
+            Licznik BMI podaje wynik według podstawowej kwalifikacji dla
+            dorosłych mężczyzn i kobiet:
+            <div class="m-2">
+              <li>niedowaga: poniżej 18,5</li>
+              <li>prawidłowa masa ciała: 18,5-24,9</li>
+              <li>nadwaga: 25,0-29,9</li>
+              <li>otyłość I stopnia: 30,0-34,9</li>
+              <li>otyłość II stopnia: 35,0-39,9</li>
+              <li>otyłość III stopnia: powyżej 40</li>
+            </div>
+            Im wyższy stopień otyłości, tym większe ryzyko wystąpienia groźnych
+            chorób, takich jak: miażdżyca, choroba niedokrwienna serca, udar
+            mózgu, a nawet niektóre nowotwory. Kalkulator BMI nie jest
+            wskaźnikiem precyzyjnym. Dla dokładniejszego określenia stanu
+            odżywienia organizmu warto skorzystać też z innych wskaźników, które
+            uwzględniają wiek, płeć i aktywność fizyczną. Należy też pamiętać o
+            tym, że na masę ciała mają również wpływ choroby przewlekłe. W
+            przypadku osób chorych samo obliczenie wskaźnika BMI nie jest
+            wystarczające, konieczna jest również konsultacja z lekarzem i
+            wykonanie odpowiednich badań. W przypadku niektórych osób pomiar BMI
+            może być obarczony pewnym błędem. Osoby aktywne fizycznie,
+            uprawiające sport, posiadające dużą masę mięśniową, mogą mieć wynik
+            BMI wskazujący na nadwagę, a w rzeczywistości mieć prawidłową masę
+            ciała. Ponadto kalkulator BMI nie jest przeznaczony dla dzieci do
+            około 14 roku życia i dla kobiet w ciąży - dla osób z tych grup
+            opracowano specjalne wskaźniki do obliczania wagi.
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-kalorii"
+            role="tabpanel"
+            aria-labelledby="v-pills-kalorii-tab"
+          >
+            Wskaznik ilosci potrzebnych kalorii
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-wody"
+            role="tabpanel"
+            aria-labelledby="v-pills-wody-tab"
+          >
+            Ilość wody, niezbędna do poprawnego funkcjonowania organizmu
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-whr"
+            role="tabpanel"
+            aria-labelledby="v-pills-whr-tab"
+          >
+            Obliczenia dotyczace wskaznika WHR
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

@@ -59,6 +59,7 @@ const configure = (env, args) => {
         },
         minify: 'auto',
       }),
+
       new ESLintWebpackPlugin({
         failOnError: false,
         failOnWarning: false,
