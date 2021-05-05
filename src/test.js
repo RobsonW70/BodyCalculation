@@ -1,20 +1,24 @@
 function wyswietlDivaz() {
-  if (document.getElementById('block1').style.display == 'none') {
+  if (document.getElementById('block1').style.display === 'none') {
     document.getElementById('block1').style.display = 'block';
   } else {
     document.getElementById('block1').style.display = 'none';
   }
 }
 
+function roundTo(value, places) {
+  var power = Math.pow(10, places);
+  return Math.round(value * power) / power;
+}
 function przeliczBMI() {
   var wynik12 = document.getElementById('wynikBmi');
   var waga = document.getElementById('bmiWaga').value;
   var wzrost = document.getElementById('bmiWzrost').value;
-  var obliczenie = '';
+  var obliczenie = 0;
   var opisSytuacji = '';
 
   if (waga > 0 && wzrost > 0) {
-    obliczenie = roundTo(waga / ((wzrost / 100) ^ 2), 1);
+    obliczenie = roundTo(waga / Math.pow(wzrost / 100, 2), 1);
     if (obliczenie < 18.5) {
       opisSytuacji = 'NIEDOWAGA';
     } else {
@@ -44,9 +48,4 @@ function przeliczBMI() {
 
   wynik12.innerHTML =
     '<h3>' + obliczenie + '</h3> <strong>' + opisSytuacji + '</strong>';
-}
-
-function roundTo(value, places) {
-  var power = Math.pow(10, places);
-  return Math.round(value * power) / power;
 }
