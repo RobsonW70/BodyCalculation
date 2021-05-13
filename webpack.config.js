@@ -52,12 +52,14 @@ const configure = (env, args) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html',
+        filname: 'index.html',
         favicon: './src/favicon.ico',
         scriptLoading: 'defer',
         meta: {
           viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         },
         minify: 'auto',
+        chunks: ['main'],
       }),
 
       new ESLintWebpackPlugin({

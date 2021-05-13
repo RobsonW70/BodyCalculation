@@ -1,12 +1,9 @@
-
 @use "@material/tab-bar/mdc-tab-bar";
 @use "@material/tab-scroller/mdc-tab-scroller";
 @use "@material/tab-indicator/mdc-tab-indicator";
 @use "@material/tab/mdc-tab";
 @use "@material/button";
 @use "@material/button/styles";
-
-
 
 $yellow-green: #b0eb00;
 $red: #b30015;
@@ -22,6 +19,7 @@ $dark-gray: #363636;
 $darker-gray: #303030;
 $darkest-gray: #292929;
 $darkester-gray: #111;
+$orange: #ffa500;
 
 html {
   background-color: #f5f5f5;
@@ -51,4 +49,49 @@ html {
   background: $cyan;
   border: 2px solid $yellow-green;
   text-align: center;
+}
+
+.centered-1stline {
+  font-size: 2rem;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-2ndline {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-text {
+  font-size: large;
+  color: #f5f5f5;
+}
+
+.opis-wskaznik {
+  color: $orange;
+  size: 5rem;
+  font-weight: bold;
+}
+
+.opis-wynik {
+  size: normal;
+  font-weight: normal;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: $orange;
+  border-color: $orange;
+}
+
+.sex-selector {
+  background-color: $orange;
+  color: #ffff;
 }
