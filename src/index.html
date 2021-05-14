@@ -21,11 +21,16 @@
   <script src="../../src/test.js"></script>
   <body>
     <header>
-      <p>&nbsp;</p>
       <div class="container">
         <div class="row">
-          <div class="col-2">
+          <div class="col-1 pt-1" style="size: 75%">
             <img src="./assets/logo.png" class="card-img-top" />
+          </div>
+          <div class="row"></div>
+          <div class="text-center">
+            <div class="col-3 mx-auto pb-3" style="size: 75%">
+              <img src="./assets/logo.png" class="card-img-top" />
+            </div>
           </div>
           <!--         <div class="col-10">
             <button class="btn btn-primary float-right rounded-pill">
@@ -54,7 +59,7 @@
         >
           <li class="nav-item">
             <a
-              class="nav-link active rounded-pill border mx-2 btn-outline-warning"
+              class="nav-link active rounded-pill border mx-4 btn-outline-warning"
               id="pills-bmi-tab"
               data-toggle="pill"
               href="#pills-bmi"
@@ -66,7 +71,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link rounded-pill border mx-2 btn-outline-warning"
+              class="nav-link rounded-pill border mx-4 btn-outline-warning"
               id="pills-kalorii-tab"
               data-toggle="pill"
               href="#pills-kalorii"
@@ -78,7 +83,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link rounded-pill border mx-2 btn-outline-warning"
+              class="nav-link rounded-pill border mx-4 btn-outline-warning"
               id="pills-wody-tab"
               data-toggle="pill"
               href="#pills-wody"
@@ -90,7 +95,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link rounded-pill border mx-2 btn-outline-warning"
+              class="nav-link rounded-pill border mx-4 btn-outline-warning"
               id="pills-whr-tab"
               data-toggle="pill"
               href="#pills-whr"
@@ -104,7 +109,7 @@
       </div>
     </div>
 
-    <div class="col-md-12 pt-3">
+    <div class="col-md-12 pt-4">
       <div class="tab-content" id="pills-tabContent">
         <!-- Sekcja BMI -->
         <div
@@ -119,7 +124,7 @@
                 <label class="small text-center" for="bmiWaga">Waga (kg)</label>
                 <input
                   type="number"
-                  class="form-control rounded-"
+                  class="form-control rounded text-center"
                   name="bmiWaga"
                   id="bmiWaga"
                   placeholder="waga w kg"
@@ -133,7 +138,7 @@
                 >
                 <input
                   type="number"
-                  class="form-control rounded"
+                  class="form-control rounded text-center"
                   name="bmiWzrost"
                   id="bmiWzrost"
                   placeholder="wzrost w cm"
@@ -155,13 +160,13 @@
             </div>
 
             <div
-              class="col-12 text-center border border-dark rounded py-3"
+              class="col-12 text-center border rounded py-3"
               id="wynikBmi"
               style=""
             >
               <h3>WYNIK</h3>
             </div>
-            <div class="justify-content-start">
+            <div class="justify-content-start pt-3">
               <ul>
                 <li>niedowaga: poniżej 18,5</li>
                 <li>prawidłowa masa ciała: 18,5-24,9</li>
@@ -301,7 +306,7 @@
               <div class="custom-control custom-radio custom-control-inline">
                 <input
                   type="radio"
-                  class="custom-control-input"
+                  class="custom-control-input text-center"
                   name="sexWybor"
                   id="man"
                   value="man"
@@ -315,7 +320,7 @@
               <div class="custom-control custom-radio custom-control-inline">
                 <input
                   type="radio"
-                  class="custom-control-input"
+                  class="custom-control-input text-center"
                   name="sexWybor"
                   id="woman"
                   autocomplete="off"
@@ -333,7 +338,7 @@
                 <label class="small text-center" for="bmrWiek">Wiek</label>
                 <input
                   type="number"
-                  class="form-control rounded-"
+                  class="form-control rounded text-center"
                   name="bmrWiek"
                   id="bmrWiek"
                   placeholder="wiek w latach"
@@ -345,7 +350,7 @@
                 <label class="small text-center" for="bmrWaga">Waga (kg)</label>
                 <input
                   type="number"
-                  class="form-control rounded-"
+                  class="form-control rounded text-center"
                   name="bmrWaga"
                   id="bmrWaga"
                   placeholder="waga w kg"
@@ -359,7 +364,7 @@
                 >
                 <input
                   type="number"
-                  class="form-control rounded"
+                  class="form-control rounded text-center"
                   name="bmrWzrost"
                   id="bmrWzrost"
                   placeholder="wzrost w cm"
@@ -437,7 +442,7 @@
                   >
                   <input
                     type="number"
-                    class="form-control rounded"
+                    class="form-control rounded text-center"
                     name="bmrTygodniowo"
                     id="bmrTygodniowo"
                     placeholder="w kg"
@@ -459,7 +464,7 @@
                   >
                   <input
                     type="number"
-                    class="form-control rounded-"
+                    class="form-control rounded text-center"
                     name="bmrUbytek"
                     id="bmrUbytek"
                     placeholder="w kg"
@@ -482,11 +487,7 @@
             <div class="text-center py-3">
               <strong> Twój BMR (wg wzoru PPM Harrisa-Benedicta):</strong>
             </div>
-            <div
-              class="text-center border border-dark rounded py-3"
-              id="wynikBmr"
-              style=""
-            >
+            <div class="text-center border rounded py-3" id="wynikBmr" style="">
               <h3>WYNIK</h3>
             </div>
             <div class="text-right text-muted small">
@@ -633,7 +634,7 @@
                 >
                 <input
                   type="number"
-                  class="form-control rounded-"
+                  class="form-control rounded text-center"
                   name="wodaWaga"
                   id="wodaWaga"
                   placeholder="w kg"
@@ -656,7 +657,7 @@
             </div>
 
             <div
-              class="col-12 text-center border border-dark rounded py-3"
+              class="col-12 text-center border rounded py-3"
               id="wynikWoda"
               style=""
             >
@@ -786,7 +787,7 @@
               <div class="custom-control custom-radio custom-control-inline">
                 <input
                   type="radio"
-                  class="custom-control-input"
+                  class="custom-control-input text-center"
                   name="sexWyborWHR"
                   id="manWHR"
                   value="man"
@@ -800,7 +801,7 @@
               <div class="custom-control custom-radio custom-control-inline">
                 <input
                   type="radio"
-                  class="custom-control-input"
+                  class="custom-control-input text-center"
                   name="sexWyborWHR"
                   id="womanWHR"
                   autocomplete="off"
@@ -820,7 +821,7 @@
                 >
                 <input
                   type="number"
-                  class="form-control rounded-"
+                  class="form-control rounded text-center"
                   name="whrTalia"
                   id="whrTalia"
                   placeholder="w cm"
@@ -830,11 +831,11 @@
               </div>
               <div class="d-flex flex-column col-md-2 justify-content-center">
                 <label class="small text-center" for="whrBiodra"
-                  >Talia (cm)</label
+                  >Biodra (cm)</label
                 >
                 <input
                   type="number"
-                  class="form-control rounded-"
+                  class="form-control rounded text-center"
                   name="whrBiodra"
                   id="whrBiodra"
                   placeholder="w cm"
@@ -857,7 +858,7 @@
             </div>
 
             <div
-              class="col-12 text-center border border-dark rounded py-3"
+              class="col-12 text-center border rounded py-3"
               id="wynikWHR"
               style=""
             >
