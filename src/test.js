@@ -112,7 +112,7 @@ function przeliczKalorie() {
   wynik12.innerHTML =
     '<div class="opis-wskaznik h3">' +
     obliczenie +
-    '</div> <div class="opis-wskaznik2 h5" style="color:blue">' +
+    '</div> <div class="opis-wskaznik2 h5" >' +
     obliczenie2 +
     '</div> <div class="opis-wynik">' +
     opisSytuacji +
@@ -133,7 +133,7 @@ function przeliczBMR() {
   var CPMPoProcesie = 0;
 
   var obliczenie = 0;
-  var obliczenie2 = 0;
+  var obliczenie2 = '';
   var opisSytuacji = '';
   var PPM = 0;
   var CPM = 0;
@@ -143,71 +143,70 @@ function przeliczBMR() {
   if (wiek < 1 || waga < 1 || wzrost < 1) {
     obliczenie = 'Sprawdz wprowadzone wartosci bo cos jest nie tak';
     blad = true;
-  } else {
-    switch (sex) {
-      case 'woman':
-        PPM = 665.1 + 9.563 * waga + 1.85 * wzrost - 4.676 * wiek;
+  }
+  switch (sex) {
+    case 'woman':
+      PPM = 665.1 + 9.563 * waga + 1.85 * wzrost - 4.676 * wiek;
 
-        break;
+      break;
 
-      case 'man':
-        PPM = 66.5 + 13.75 * waga + 5.003 * wzrost - 6.775 * wiek;
-        break;
+    case 'man':
+      PPM = 66.5 + 13.75 * waga + 5.003 * wzrost - 6.775 * wiek;
+      break;
 
-      default:
-        obliczenie = 'Wybierz Płeć';
-        blad = true;
-    }
-    if (!blad) {
-      CPM = PPM * wyborAktywnosci;
-      obliczenie2 =
-        '( CPM = ' + Math.round(CPM) + '  <-> PPM = ' + Math.round(PPM) + ')* ';
-      switch (document.getElementById('wyborCelu').value) {
-        case 'schudnac':
-          if (tygodniowo < 0.1 || ubytek < 1) {
-            alert('Uzupelnij wagi w celu analizy progresu chudniecie');
-            document.getElementById('bmrTygodniowo').focus();
-            return;
-          }
-          ileKaloriiDziennieUbytek = (tygodniowo * 7250) / 7;
-          CPMPoProcesie = CPM - ileKaloriiDziennieUbytek;
-          obliczenie = Math.round(CPMPoProcesie) + ' kalorii ';
-          opisSytuacji =
-            'Czas trwania procesu chudniecia: ' +
-            roundTo(ubytek / tygodniowo, 1) +
-            ' tygodnii';
-          break;
-
-        case 'przytyc':
-          if (tygodniowo < 0.1 || ubytek < 1) {
-            alert('Uzupelnij wagi w celu analizy progresu chudniecie');
-            document.getElementById('bmrTygodniowo').focus();
-            return;
-          }
-          ileKaloriiDziennieUbytek = (tygodniowo * 7250) / 7;
-          CPMPoProcesie = CPM + ileKaloriiDziennieUbytek;
-          obliczenie = Math.round(CPMPoProcesie) + ' kalorii ';
-          opisSytuacji =
-            'Czas trwania procesu zwiększenia wagi: ' +
-            roundTo(ubytek / tygodniowo, 1) +
-            ' tygodnii';
-          break;
-
-        default: {
-          obliczenie = Math.round(CPM) + ' kalorii';
+    default:
+      obliczenie = 'Wybierz Płeć';
+      blad = true;
+  }
+  if (!blad) {
+    CPM = PPM * wyborAktywnosci;
+    obliczenie2 =
+      '( CPM = ' + Math.round(CPM) + '  <-> PPM = ' + Math.round(PPM) + ')* ';
+    switch (document.getElementById('wyborCelu').value) {
+      case 'schudnac':
+        if (tygodniowo < 0.1 || ubytek < 1) {
+          alert('Uzupelnij wagi w celu analizy progresu chudniecie');
+          document.getElementById('bmrTygodniowo').focus();
+          return;
         }
+        ileKaloriiDziennieUbytek = (tygodniowo * 7250) / 7;
+        CPMPoProcesie = CPM - ileKaloriiDziennieUbytek;
+        obliczenie = Math.round(CPMPoProcesie) + ' kalorii ';
+        opisSytuacji =
+          'Czas trwania procesu chudniecia: ' +
+          roundTo(ubytek / tygodniowo, 1) +
+          ' tygodnii';
+        break;
+
+      case 'przytyc':
+        if (tygodniowo < 0.1 || ubytek < 1) {
+          alert('Uzupelnij wagi w celu analizy progresu chudniecie');
+          document.getElementById('bmrTygodniowo').focus();
+          return;
+        }
+        ileKaloriiDziennieUbytek = (tygodniowo * 7250) / 7;
+        CPMPoProcesie = CPM + ileKaloriiDziennieUbytek;
+        obliczenie = Math.round(CPMPoProcesie) + ' kalorii ';
+        opisSytuacji =
+          'Czas trwania procesu zwiększenia wagi: ' +
+          roundTo(ubytek / tygodniowo, 1) +
+          ' tygodnii';
+        break;
+
+      default: {
+        obliczenie = Math.round(CPM) + ' kalorii';
       }
     }
-    console.log(blad);
-    wynik12.innerHTML =
-      '<div class="opis-wskaznik h3">' +
-      obliczenie +
-      '</div> <div class="opis-wskaznik2 h5" style="color:blue">' +
-      obliczenie2 +
-      '</div> <div class="opis-wynik">' +
-      opisSytuacji +
-      '</div>';
   }
+  console.log(blad);
+  wynik12.innerHTML =
+    '<div class="opis-wskaznik h3">' +
+    obliczenie +
+    '</div> <div class="opis-wskaznik2 h5" >' +
+    obliczenie2 +
+    '</div> <div class="opis-wynik">' +
+    opisSytuacji +
+    '</div>';
 }
 
 function przeliczWode() {
@@ -227,7 +226,7 @@ function przeliczWode() {
   wynik12.innerHTML =
     '<div class="opis-wskaznik h3">' +
     obliczenie +
-    '</div> <div class="opis-wskaznik2 h5" style="color:blue">' +
+    '</div> <div class="opis-wskaznik2 h5" >' +
     obliczenie2 +
     '</div> <div class="opis-wynik">' +
     opisSytuacji +
@@ -238,6 +237,7 @@ function przeliczWHR() {
   var obliczenie = 0;
   var obliczenie2 = '';
   var opisSytuacji = '';
+  var blad = false;
 
   var talia = document.getElementById('whrTalia').value;
   var biodra = document.getElementById('whrBiodra').value;
@@ -246,37 +246,40 @@ function przeliczWHR() {
 
   if (biodra < 1 || talia < 1) {
     obliczenie = 'Sprawdz wprowadzone wartosci bo cos jest nie tak';
+    obliczenie2 = '';
+    blad = true;
   } else {
     obliczenie = roundTo(talia / biodra, 1);
   }
+  if (!blad) {
+    switch (sex) {
+      case 'woman':
+        if (obliczenie < 0.8) {
+          obliczenie2 = ' typ gynoidalny (gruszka)';
+        } else {
+          obliczenie2 = 'typ androidalny (jabłko)';
+        }
 
-  switch (sex) {
-    case 'woman':
-      if (obliczenie < 0.8) {
-        obliczenie2 = ' typ gynoidalny (gruszka)';
-      } else {
-        obliczenie2 = 'typ androidalny (jabłko)';
-      }
+        break;
 
-      break;
+      case 'man':
+        if (obliczenie < 1) {
+          obliczenie2 = ' typ gynoidalny (gruszka)';
+        } else {
+          obliczenie2 = 'typ androidalny (jabłko)';
+        }
+        break;
 
-    case 'man':
-      if (obliczenie < 1) {
-        obliczenie2 = ' typ gynoidalny (gruszka)';
-      } else {
-        obliczenie2 = 'typ androidalny (jabłko)';
-      }
-      break;
-
-    default:
-      obliczenie = 'Wybierz Płeć';
-      blad = true;
+      default:
+        obliczenie = 'Wybierz Płeć';
+        obliczenie2 = '';
+        blad = true;
+    }
   }
-
   wynik12.innerHTML =
     '<div class="opis-wskaznik h3">' +
     obliczenie +
-    '</div> <div class="opis-wskaznik2 h5" style="color:blue">' +
+    '</div> <div class="opis-wskaznik2 h5" >' +
     obliczenie2 +
     '</div> <div class="opis-wynik">' +
     opisSytuacji +

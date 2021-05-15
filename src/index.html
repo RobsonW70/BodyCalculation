@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <title>BodyCalculation v.01</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
   </head>
   <link
@@ -41,9 +41,14 @@
           <div class="col-12">
             <img src="./assets/slider.png" class="img-fluid" />
 
-            <div class="centered-1stline text-white h3" id="mainHeader"></div>
+            <div
+              class="centered-1stline text-center text-white h3"
+              id="mainHeader"
+            ></div>
 
-            <div class="centered-2ndline text-white" id="2ndHeader">Opis</div>
+            <div class="centered-2ndline text-center text-white" id="2ndHeader">
+              Opis
+            </div>
           </div>
         </div>
       </div>
@@ -57,9 +62,9 @@
           id="pills-tab"
           role="tablist"
         >
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a
-              class="nav-link active rounded-pill border mx-4 btn-outline-warning"
+              class="nav-link active rounded-pill mx-4 btn-primary2"
               id="pills-bmi-tab"
               data-toggle="pill"
               href="#pills-bmi"
@@ -69,9 +74,9 @@
               >Kalkulator BMI</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a
-              class="nav-link rounded-pill border mx-4 btn-outline-warning"
+              class="nav-link rounded-pill mx-4 btn-primary2"
               id="pills-kalorii-tab"
               data-toggle="pill"
               href="#pills-kalorii"
@@ -81,9 +86,9 @@
               >Kalkulator Kalorii</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a
-              class="nav-link rounded-pill border mx-4 btn-outline-warning"
+              class="nav-link rounded-pill mx-4 btn-primary2"
               id="pills-wody-tab"
               data-toggle="pill"
               href="#pills-wody"
@@ -93,9 +98,9 @@
               >Kalkulator Wody</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a
-              class="nav-link rounded-pill border mx-4 btn-outline-warning"
+              class="nav-link rounded-pill mx-4 btn-primary2"
               id="pills-whr-tab"
               data-toggle="pill"
               href="#pills-whr"
@@ -127,7 +132,7 @@
                   class="form-control rounded text-center"
                   name="bmiWaga"
                   id="bmiWaga"
-                  placeholder="waga w kg"
+                  placeholder="waga"
                   aria-describedby="bmiWagaOpis"
                   min="1"
                 />
@@ -141,7 +146,7 @@
                   class="form-control rounded text-center"
                   name="bmiWzrost"
                   id="bmiWzrost"
-                  placeholder="wzrost w cm"
+                  placeholder="wzrost"
                   aria-describedby="bmiWzrostOpis"
                 />
               </div>
@@ -149,7 +154,7 @@
             <div class="text-center pt-3">
               <button
                 type="button"
-                class="btn btn-primary rounded-pill text-center justify-content-center"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
                 onclick="przeliczBMI()"
               >
                 Oblicz
@@ -179,7 +184,7 @@
               <div class="text-right justify-content-end">
                 <button
                   type="button"
-                  class="btn btn-outline-secondary"
+                  class="btn rounded-pill btn-oblicz"
                   data-toggle="modal"
                   data-target="#infoBmi"
                 >
@@ -280,7 +285,7 @@
                   <div class="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn rounded-pill btn-oblicz"
                       data-dismiss="modal"
                     >
                       Zamknij
@@ -311,7 +316,7 @@
                   id="man"
                   value="man"
                 /><label class="custom-control-label" for="man"
-                  ><span class="border rounded-pill px-3 sex-selector"
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
                     >Mezczyzna</span
                   >
                 </label>
@@ -327,8 +332,8 @@
                   value="woman"
                 />
                 <label class="custom-control-label" for="woman"
-                  ><span class="border rounded-pill px-3 sex-selector"
-                    >Kobieta</span
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
+                    >&nbsp;Kobieta &nbsp;</span
                   ></label
                 >
               </div>
@@ -341,7 +346,7 @@
                   class="form-control rounded text-center"
                   name="bmrWiek"
                   id="bmrWiek"
-                  placeholder="wiek w latach"
+                  placeholder="wiek"
                   aria-describedby="bmrWiekOpis"
                   min="1"
                 />
@@ -353,7 +358,7 @@
                   class="form-control rounded text-center"
                   name="bmrWaga"
                   id="bmrWaga"
-                  placeholder="waga w kg"
+                  placeholder="waga"
                   aria-describedby="bmrWagaOpis"
                   min="1"
                 />
@@ -367,7 +372,7 @@
                   class="form-control rounded text-center"
                   name="bmrWzrost"
                   id="bmrWzrost"
-                  placeholder="wzrost w cm"
+                  placeholder="wzrost"
                   aria-describedby="bmrWzrostOpis"
                 />
               </div>
@@ -445,7 +450,7 @@
                     class="form-control rounded text-center"
                     name="bmrTygodniowo"
                     id="bmrTygodniowo"
-                    placeholder="w kg"
+                    placeholder="kg"
                     aria-describedby="bmrTygodniowoOpis"
                     max="2"
                     min="0"
@@ -467,7 +472,7 @@
                     class="form-control rounded text-center"
                     name="bmrUbytek"
                     id="bmrUbytek"
-                    placeholder="w kg"
+                    placeholder="kg"
                     aria-describedby="bmrUbytekOpis"
                     min="0"
                   />
@@ -477,7 +482,7 @@
             <div class="text-center pt-3">
               <button
                 type="button"
-                class="btn btn-primary rounded-pill text-center justify-content-center"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
                 onclick="przeliczBMR()"
               >
                 Oblicz
@@ -510,7 +515,7 @@
               <div class="text-right">
                 <button
                   type="button"
-                  class="btn btn-outline-secondary"
+                  class="btn rounded-pill btn-oblicz"
                   data-toggle="modal"
                   data-target="#infoBmr"
                 >
@@ -607,7 +612,7 @@
                   <div class="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn rounded-pill btn-oblicz"
                       data-dismiss="modal"
                     >
                       Zamknij
@@ -637,7 +642,7 @@
                   class="form-control rounded text-center"
                   name="wodaWaga"
                   id="wodaWaga"
-                  placeholder="w kg"
+                  placeholder="waga"
                   aria-describedby="wodaWagaOpis"
                   min="1"
                 />
@@ -646,7 +651,7 @@
             <div class="text-center pt-3">
               <button
                 type="button"
-                class="btn btn-primary rounded-pill text-center justify-content-center"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
                 onclick="przeliczWode()"
               >
                 Oblicz
@@ -663,7 +668,7 @@
             >
               <h3>WYNIK</h3>
             </div>
-            <div class="justify-content-start">
+            <div class="justify-content-start pt-4">
               <ul>
                 <li>dla mężczyzn - 2500 ml na dobę</li>
                 <li>dla kobiet - 2000 ml na dobę</li>
@@ -674,7 +679,7 @@
               <div class="text-right justify-content-end">
                 <button
                   type="button"
-                  class="btn btn-outline-secondary"
+                  class="btn rounded-pill btn-oblicz"
                   data-toggle="modal"
                   data-target="#infoWoda"
                 >
@@ -762,7 +767,7 @@
                   <div class="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn rounded-pill btn-oblicz"
                       data-dismiss="modal"
                     >
                       Zamknij
@@ -792,7 +797,7 @@
                   id="manWHR"
                   value="man"
                 /><label class="custom-control-label" for="manWHR"
-                  ><span class="border rounded-pill px-3 sex-selector"
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
                     >Mezczyzna</span
                   >
                 </label>
@@ -808,8 +813,8 @@
                   value="woman"
                 />
                 <label class="custom-control-label" for="womanWHR"
-                  ><span class="border rounded-pill px-3 sex-selector"
-                    >Kobieta</span
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
+                    >&nbsp; Kobieta &nbsp;</span
                   ></label
                 >
               </div>
@@ -824,7 +829,7 @@
                   class="form-control rounded text-center"
                   name="whrTalia"
                   id="whrTalia"
-                  placeholder="w cm"
+                  placeholder="talia"
                   aria-describedby="whrTaliaOpis"
                   min="1"
                 />
@@ -838,7 +843,7 @@
                   class="form-control rounded text-center"
                   name="whrBiodra"
                   id="whrBiodra"
-                  placeholder="w cm"
+                  placeholder="biodra"
                   aria-describedby="whrBiodraOpis"
                   min="1"
                 />
@@ -847,7 +852,7 @@
             <div class="text-center pt-3">
               <button
                 type="button"
-                class="btn btn-primary rounded-pill text-center justify-content-center"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
                 onclick="przeliczWHR()"
               >
                 Oblicz
@@ -864,7 +869,7 @@
             >
               <h3>WYNIK</h3>
             </div>
-            <div class="justify-content-start">
+            <div class="justify-content-start pt-4">
               WHR - normy u kobiet:
               <ul>
                 <li>>0,8 - typ androidalny (jabłko)</li>
@@ -879,7 +884,7 @@
               <div class="text-right justify-content-end">
                 <button
                   type="button"
-                  class="btn btn-outline-secondary"
+                  class="btn rounded-pill btn-oblicz"
                   data-toggle="modal"
                   data-target="#infoWHR"
                 >
@@ -989,7 +994,7 @@
                   <div class="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn rounded-pill btn-oblicz"
                       data-dismiss="modal"
                     >
                       Zamknij
@@ -1005,11 +1010,15 @@
     <!-- Sekcja Kalkulator wody -->
     <!-- STOPKA
   -->
-    <footer class="border border-top py-3 px-4">
-      <small
-        >Copyright by: <span style="color: orange">Laura Wisniewska</span>
-      </small>
-    </footer>
+    <div class="pt-4">
+      <footer class="border-top px-1 py-2">
+        <div class="container">
+          <small class="col-10"
+            >Copyright by: <span class="footer-name">Laura Wisniewska</span>
+          </small>
+        </div>
+      </footer>
+    </div>
   </body>
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

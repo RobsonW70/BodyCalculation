@@ -20,10 +20,17 @@ $darker-gray: #303030;
 $darkest-gray: #292929;
 $darkester-gray: #111;
 $orange: #ffa500;
+$orange-logo: #e97449;
+$black: #000;
+$white: #ffff;
 
 html {
   background-color: #f5f5f5;
   color: #111;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
 }
 
 .grid-menucalc {
@@ -53,14 +60,14 @@ html {
 
 .centered-1stline {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .centered-2ndline {
   position: absolute;
-  top: 65%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -71,26 +78,61 @@ html {
 }
 
 .opis-wskaznik {
-  color: $orange;
+  color: $orange-logo;
   size: 5rem;
+  font-weight: bold;
+}
+
+.opis-wskaznik2 {
+  color: $black;
+  size: 3rem;
   font-weight: bold;
 }
 
 .opis-wynik {
   size: normal;
   font-weight: normal;
+  color: $black;
 }
 
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-  background-color: $orange;
-  border-color: $orange;
+.btn-primary2:hover,
+.btn-primary2:active,
+.btn-primary2:visited,
+.btn-primary2::selection,
+.btn-primary2:focus {
+  background-color: $orange-logo;
+  border-color: $orange-logo;
+  color: $white;
+}
+
+.btn-primary2 {
+  border: solid 1px $orange-logo;
+  border-color: $orange-logo;
+  color: $black;
+}
+
+.btn-oblicz,
+.btn-oblicz:hover,
+.btn-oblicz:active,
+.btn-oblicz:visited,
+.btn-oblicz::selection,
+.btn-oblicz:focus {
+  background-color: $orange-logo;
+  border-color: $orange-logo;
+  color: $white;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: $orange-logo;
 }
 
 .sex-selector {
-  background-color: $orange;
+  background-color: $orange-logo;
   color: #ffff;
+}
+
+.footer-name {
+  color: $orange-logo;
 }
