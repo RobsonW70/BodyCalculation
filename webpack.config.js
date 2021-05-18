@@ -87,6 +87,17 @@ const configure = (env, args) => {
           concurrency: 100,
         },
       }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: './src/scripts',
+            to: 'scripts',
+          },
+        ],
+        options: {
+          concurrency: 100,
+        },
+      }),
     ],
     devServer: {
       port: 4200,

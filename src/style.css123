@@ -1,9 +1,4 @@
-@use "@material/tab-bar/mdc-tab-bar";
-@use "@material/tab-scroller/mdc-tab-scroller";
-@use "@material/tab-indicator/mdc-tab-indicator";
-@use "@material/tab/mdc-tab";
-@use "@material/button";
-@use "@material/button/styles";
+
 html {
   background-color: #f5f5f5;
   color: #111;
@@ -25,7 +20,9 @@ html {
   gap: 50px 50px;
   background-color: #595959;
   padding: 10px;
-      grid-template-areas: ". . ." ". menucalc ." ". . .";
+      grid-template-areas: ". . ."
+ ". menucalc ."
+ ". . .";
 }
 
 .format-menucalc {

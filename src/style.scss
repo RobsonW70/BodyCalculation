@@ -1,10 +1,3 @@
-@use "@material/tab-bar/mdc-tab-bar";
-@use "@material/tab-scroller/mdc-tab-scroller";
-@use "@material/tab-indicator/mdc-tab-indicator";
-@use "@material/tab/mdc-tab";
-@use "@material/button";
-@use "@material/button/styles";
-
 $yellow-green: #b0eb00;
 $red: #b30015;
 $blue: #2a00b3;
@@ -60,16 +53,18 @@ body {
 
 .centered-1stline {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 3vw;
 }
 
 .centered-2ndline {
   position: absolute;
-  top: 70%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 1.7vw;
 }
 
 .menu-text {
@@ -135,4 +130,12 @@ body {
 
 .footer-name {
   color: $orange-logo;
+}
+
+.text-na-obrazku-h2 {
+  font-size: 2vw;
+}
+
+.text-na-obrazku-h3 {
+  font-size: 3vw;
 }
